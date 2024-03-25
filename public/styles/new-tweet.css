@@ -51,4 +51,10 @@
     font-family: "Montserrat", sans-serif;
     font-size: 20px;
     margin-top: 10px;
-   }
+}
+
+.over-limit {
+    color: rgb(216, 20, 20);
+    font-weight: bold;
+    font-size: 15px;
+}

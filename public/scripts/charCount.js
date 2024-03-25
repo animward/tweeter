@@ -8,6 +8,12 @@ $(document).ready(function() {
         }
         var remainingChars = 140 - tweetLength;
         $(".counter").text(tweetLength + "/140");
+
+        if (remainingChars < 1) {
+            $(".counter").addClass("over-limit").text("Woah there! Calm down, you're over the limit!");
+        } else {
+            $(".counter").removeClass("over-limit");
+        }
     });  
 });
 
