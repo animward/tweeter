@@ -45,14 +45,15 @@ nav {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- h2 {
+ .bigUsername {
   letter-spacing: -0.2px;
   font-family: "Montserrat", sans-serif;
   font-size: 24px;
+  margin-top: 15px;
  }
 
  h3 {
-  letter-spacing: -2%;
+  letter-spacing: -0.2px;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
   color: #5e5e5e;

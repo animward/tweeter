@@ -21,7 +21,7 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/newTweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -57,7 +57,7 @@
         <img src="/images/profile-circle.png" style="width: 180px;"> 
     </div>
     <div>
-        <h2>@YourUsername</h2>
+        <h2 class ="bigUsername">@YourUsername</h2>
     </div>
   </header>
 
@@ -66,12 +66,12 @@
     <!-- Page-specific (main) content here -->
     <main class="container" id="tweetContainer">
       <section class="new-tweet">
-        <h2>@YourUsername</h2>
+        <h2 class="littleUsername">@YourUsername</h2>
         <h3>What are you thinking about?</h3>
-        <form>
+        <form id="tweet-form" action="/tweets" method="POST">
           <textarea class="tweetform" id="tweet-text" rows="1" placeholder="Type here..."></textarea>
           <div>
-            <button type="submit">Tweet</button>
+            <button type="submit"><span class="material-symbols-outlined" style="vertical-align: -4px;">add_box</span>Post</button>
             <output name="counter" class="counter" for="tweet-text">0/140</output>
           </div>
         </form>
