@@ -1,0 +1,33 @@
+.tweet-content{
+    border-bottom: 2px solid #fff;
+    margin-bottom: 5px;
+}
+
+.tweet footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tweet-icons {
+    float: right;
+    display: flex;
+    gap: 10px;
+}
+
+.tweet-icons span {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.tweet-icons span:hover {
+    color: #418ce1;
+}
+
+.container:hover {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.696);
+}
+
+.tweet-date {
+    font-size: 12px;
+    color: #fff;
+}
