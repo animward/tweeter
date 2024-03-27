@@ -1,5 +1,13 @@
-/*newTweet.css*/
+/*styles/new-tweet.css*/
 #tweetContainer {
+    width: 90%;
+    margin-top: 55px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.25);
+}
+
+#tweets-container {
     width: 90%;
     margin-top: 55px;
     padding: 30px;
