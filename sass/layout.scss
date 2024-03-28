@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,6 +13,8 @@ html {
 /*
  * Global layout stuff
  */
+
+
 body {
   color: #f5f5f7;
   background-image: linear-gradient(70deg, #121212, #202020);
@@ -25,13 +26,13 @@ nav {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   letter-spacing: -6%;
-  color: #f5f5f7;
+  color:#f5f5f7;
   font-weight: 500;
 }
 
 .header {
   animation: fadeInDown 1.5s;
-  background-image: linear-gradient(90deg, #53b3b4, #558cc7);
+  background-image: linear-gradient(90deg, #53b3b4, #558cc7); ;
   padding: 0px 20px 0px 20px;
   margin-bottom: 40px;
 }
@@ -40,7 +41,6 @@ nav {
   margin-left: auto;
   margin-right: auto;
 }
-
 .container {
   margin: 0 auto;
   max-width: none;
@@ -48,7 +48,7 @@ nav {
 }
 
 .border-bottom {
-  border-bottom: 1px solid rgba(222, 226, 230, 0) !important;
+  border-bottom: 1px solid #dee2e600 !important;
 }
 
 .newPost {
@@ -63,20 +63,21 @@ nav {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-.bigUsername {
+
+ .bigUsername {
   letter-spacing: -0.2px;
   font-family: "Montserrat", sans-serif;
   font-size: 24px;
   margin-top: 15px;
-}
+ }
 
-h3 {
+ h3 {
   letter-spacing: -0.2px;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
   color: #5e5e5e;
-}
+ }
 
-*:focus {
-  outline: none;
+ *:focus {
+  outline: none; 
 }
