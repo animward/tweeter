@@ -88,7 +88,7 @@ $(function() {
                 success: function(response) {
                     console.log('Tweet submitted successfully:', response);
                     $('#tweet-text').val('');
-                   // loadTweets();
+                    loadTweets();
                 },
                 error: function(error) {
                     console.error('Error submitting tweet:', error);
