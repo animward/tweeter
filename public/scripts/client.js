@@ -83,6 +83,7 @@ $(document).ready(function() {
             contentType: 'application/json',    
             data: JSON.stringify({ text: tweetText }),
             success: function(response) {
+                $('#tweets-container').empty(); ``
                 $('#tweet-text').val('');
                 loadTweets();
             },
