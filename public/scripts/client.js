@@ -14,9 +14,11 @@ $(function() {
         const createdDate = new Date(tweet.created_at);
         const currentDate = new Date();
 
-        const isNewTweet = (currentDate - createdDate) < 86400000;
+        const formattedDate = createdDate.toLocaleString('en-US', { day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: 'numeric'});
+
+        const isNewTweet = (currentDate > createdDate);
         const $tweet = $(`
-                <section class="tweet">
+                <section class="tweet${isNewTweet ? ' animated' : ''}">
                     <h2 class="littleUsername">
                     ${tweet.user.name}
                     </h2>
@@ -36,7 +38,7 @@ $(function() {
                         </div>
                         <div class="tweet-date">
                             <span>
-                            ${(createdDate)}
+                            ${(formattedDate)}
                             </span>
                         </div>
                     </footer>

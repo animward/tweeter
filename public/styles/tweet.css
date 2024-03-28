@@ -45,3 +45,7 @@
 section .tweet {
     animation: backInLeft 1s;
 }
+
+.tweet.animated {
+    animation: fadeIn 1.2s;
+}
