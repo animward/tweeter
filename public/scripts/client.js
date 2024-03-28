@@ -88,6 +88,7 @@ $(function() {
                 success: function(response) {
                     console.log('Tweet submitted successfully:', response);
                     $('#tweet-text').val('');
+                    $(".counter").text("0/140").removeClass("over-limit");
                     loadTweets();
                 },
                 error: function(error) {
