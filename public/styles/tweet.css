@@ -39,6 +39,7 @@
     border-radius: 15px;
     box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.25);
     background-color: #242424;
+    animation: fadeIn 1s;
 }
 
 section .tweet {

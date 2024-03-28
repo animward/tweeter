@@ -59,7 +59,15 @@
 .over-limit {
     display: inline-block;
     animation: headShake 1.1s infinite; 
-    color: rgb(216, 20, 20);
+    color: #fcff2d;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.empty-error {
+    display: inline-block;
+    animation: flash 1.4s infinite; 
+    color: #fcff2d;
     font-weight: bold;
     font-size: 15px;
 }

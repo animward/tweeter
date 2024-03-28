@@ -11,6 +11,10 @@
 $(function() {
     // Function to create a new tweet element
     const createTweetElement = function(tweet) {
+        const createdDate = new Date(tweet.created_at);
+        const currentDate = new Date();
+
+        const isNewTweet = (currentDate - createdDate) < 86400000;
         const $tweet = $(`
                 <section class="tweet">
                     <h2 class="littleUsername">
@@ -32,7 +36,7 @@ $(function() {
                         </div>
                         <div class="tweet-date">
                             <span>
-                            ${(tweet.created_at)}
+                            ${(createdDate)}
                             </span>
                         </div>
                     </footer>
