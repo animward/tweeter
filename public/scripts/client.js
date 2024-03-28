@@ -25,7 +25,7 @@ $(function() {
                     <footer>
                         <div class="tweet-footer">
                             <div class="tweet-icons">
-                                <span class="material-symbols-outlined">favorite</span>
+                                <span class="material-symbols-outlined" id="heart" contenteditable="false" >favorite</span>
                                 <span class="material-symbols-outlined">repeat</span>
                                 <span class="material-symbols-outlined">share</span>
                             </div>
@@ -38,6 +38,10 @@ $(function() {
                     </footer>
                 </section>
         `);
+
+        $tweet.find('#heart').on('click', function() {
+            $(this).toggleClass('hearted');
+        });
         return $tweet;
     };
 
