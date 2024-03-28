@@ -1,3 +1,4 @@
+// server/lib/util/user-helper.js
 "use strict";
 
 const Chance      = require("chance"),

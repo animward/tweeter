@@ -1,13 +1,16 @@
+// server/routes/tweets.js
 "use strict";
 
-const userHelper    = require("../lib/util/user-helper")
+const userHelper = require( "../lib/util/user-helper" );
+const DataHelpers = require("../lib/data-helpers"); // Import the DataHelpers module
 
-const express       = require('express');
-const tweetsRoutes  = express.Router();
+const express = require('express');
+//const { text } = require("body-parser");
+const tweetsRoutes = express.Router();
 
 module.exports = function(DataHelpers) {
 
-  tweetsRoutes.get("/", function(req, res) {
+  tweetsRoutes.get("/", function(_req, res) {
     DataHelpers.getTweets((err, tweets) => {
       if (err) {
         res.status(500).json({ error: err.message });
@@ -18,8 +21,9 @@ module.exports = function(DataHelpers) {
   });
 
   tweetsRoutes.post("/", function(req, res) {
-    if (!req.body.text) {
-      res.status(400).json({ error: 'invalid request: no data in POST body'});
+    const tweetText = req.body.text;
+    if (!tweetText || tweetText.trim() === ""){
+      res.status(400).json({ error: 'invalid request: no tweet text provided'});
       return;
     }
 
@@ -27,7 +31,7 @@ module.exports = function(DataHelpers) {
     const tweet = {
       user: user,
       content: {
-        text: req.body.text
+        text: tweetText
       },
       created_at: Date.now()
     };
