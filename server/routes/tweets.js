@@ -2,7 +2,7 @@
 "use strict";
 
 const userHelper = require( "../lib/util/user-helper" );
-const DataHelpers = require("../lib/data-helpers"); // Import the DataHelpers module
+const DataHelpers = require("../lib/data-helpers").default;
 
 const express = require('express');
 //const { text } = require("body-parser");
@@ -22,12 +22,13 @@ module.exports = function(DataHelpers) {
 
   tweetsRoutes.post("/", function(req, res) {
     const tweetText = req.body.text;
-    if (!tweetText || tweetText.trim() === ""){
+    if (!tweetText){
       res.status(400).json({ error: 'invalid request: no tweet text provided'});
       return;
     }
 
     const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
+    
     const tweet = {
       user: user,
       content: {

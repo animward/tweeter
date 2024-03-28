@@ -43,11 +43,11 @@ $(document).ready(function() {
 
     // Function to render tweets
     const renderTweets = function(tweets) {
-        const $tweetsContainer = $('#tweets-container'); // Get the tweets container
+        const $tweetContainer = $('#tweets-container'); // Get the tweets container
 
         for (const tweet of tweets) {
             const $tweet = createTweetElement(tweet);
-            $tweetsContainer.prepend($tweet);
+            $tweetContainer.prepend($tweet);
         }
     };
 
@@ -68,10 +68,13 @@ $(document).ready(function() {
 
     $('#tweet-form').on('submit', function(event) {
         event.preventDefault();
-        const tweetText = $('#tweet-text').val();
-        if (!tweetText) {
-            alert('Tweet cannot be empty!');
+        const tweetText = $('#tweet-text').val().trim();
+        console.log('Tweet Text: ', tweetText);
+       if (!tweetText) {
+            console.error('Error: you typed too much.');
             return;
+        } else {
+            console.log('Tweet text is not empty:', tweetText);
         }
 
         $.ajax({
@@ -83,7 +86,7 @@ $(document).ready(function() {
                 $('#tweet-text').val('');
                 loadTweets();
             },
-            error: function(error) {
+            error: function(xhr, status, error) {
                 console.error('Error submitting tweet:', error);
             }
         });
