@@ -8,7 +8,7 @@
 
 // Function to create a new tweet element
 
-$(document).ready(function() {
+$(function() {
     // Function to create a new tweet element
     const createTweetElement = function(tweet) {
         const $tweet = $(`
@@ -41,17 +41,17 @@ $(document).ready(function() {
         return $tweet;
     };
 
-    // Function to render tweets
-    const renderTweets = function(tweets) {
-        const $tweetContainer = $('#tweets-container'); // Get the tweets container
+    // look into bem css
 
-        for (const tweet of tweets) {
+
+    // Function to render tweets
+    const renderTweets = (tweets) => {
+        tweets.forEach((tweet) => {
             const $tweet = createTweetElement(tweet);
-            $tweetContainer.prepend($tweet);
-        }
+            $('#tweets-container').prepend($tweet);
+        });
     };
 
-    // Function to load tweets from the server
     const loadTweets = function() {
         $.ajax({
             url: '/tweets',
@@ -65,32 +65,36 @@ $(document).ready(function() {
             }
         });
     };
+  
 
     $('#tweet-form').on('submit', function(event) {
-        event.preventDefault();
-        const tweetText = $('#tweet-text').val().trim();
-        console.log('Tweet Text: ', tweetText);
-       if (!tweetText) {
-            console.error('Error: you typed too much.');
-            return;
-        } else {
-            console.log('Tweet text is not empty:', tweetText);
-        }
+            event.preventDefault();
 
-        $.ajax({
-            url: '/tweets',
-            method: 'POST',
-            contentType: 'application/json',    
-            data: JSON.stringify({ text: tweetText }),
-            success: function(response) {
-                $('#tweets-container').empty(); ``
-                $('#tweet-text').val('');
-                loadTweets();
-            },
-            error: function(xhr, status, error) {
-                console.error('Error submitting tweet:', error);
+            const tweetText = $('#tweet-text').val().trim();
+
+            console.log('Tweet Text: ', tweetText);
+            if (tweetText.length > 140) {
+                console.error('Tweet is too long');
+                return;
             }
-        });
+
+            const tweetData = $(this).serialize();
+
+            $.ajax({
+                url: '/tweets',
+                method: 'POST',
+                contentType: 'application/x-www-form-urlencoded',    
+                data: { text: tweetText },
+                success: function(response) {
+                    console.log('Tweet submitted successfully:', response);
+                    $('#tweet-text').val('');
+                   // loadTweets();
+                },
+                error: function(error) {
+                    console.error('Error submitting tweet:', error);
+                }
+            });
+        
     });
 
     // Call the loadTweets function to fetch and render tweets

@@ -2,7 +2,7 @@
 "use strict";
 
 const userHelper = require( "../lib/util/user-helper" );
-const DataHelpers = require("../lib/data-helpers").default;
+//const DataHelpers = require("../lib/data-helpers").default;
 
 const express = require('express');
 //const { text } = require("body-parser");
@@ -21,8 +21,7 @@ module.exports = function(DataHelpers) {
   });
 
   tweetsRoutes.post("/", function(req, res) {
-    const tweetText = req.body.text;
-    if (!tweetText){
+    if (!req.body.text){
       res.status(400).json({ error: 'invalid request: no tweet text provided'});
       return;
     }
@@ -32,7 +31,7 @@ module.exports = function(DataHelpers) {
     const tweet = {
       user: user,
       content: {
-        text: tweetText
+        text: req.body.text
       },
       created_at: Date.now()
     };
