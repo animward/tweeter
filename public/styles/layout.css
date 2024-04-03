@@ -30,10 +30,13 @@ nav {
 }
 
 .header {
+  position: fixed;
+  width: 100%;
   animation: fadeInDown 1.5s;
   background-image: linear-gradient(90deg, #53b3b4, #558cc7);
-  padding: 0px 20px 0px 20px;
+  padding: 0px 20px 10px 20px;
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .header center {
@@ -41,10 +44,10 @@ nav {
   margin-right: auto;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: none;
-  padding: 0 20px;
+.profile {
+  display: inline-block;
+  margin-top: 200px;
+  margin-left: 45px;
 }
 
 .border-bottom {

@@ -1,11 +1,16 @@
 /*styles/new-tweet.css*/
 #tweetContainer {
-  width: 90%;
-  margin-top: 55px;
+  display: inline-block;
+  width: 700px;
+  margin-top: 90px;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.25);
   background-color: #242424;
+}
+
+#tweets-container {
+  display: inline-block;
 }
 
 .tweetform {
