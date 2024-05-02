@@ -43,10 +43,15 @@
   animation: fadeIn 1s;
 }
 
+
 section .tweet {
   animation: backInLeft 1s;
 }
 
 .tweet.animated {
   animation: fadeIn 1.2s;
+}
+
+.tweet.animated:hover {
+  box-shadow: 0 0 10px #a3a3a34a;
 }
